@@ -5,10 +5,9 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
-        boolean isAllPositive = true;
-        NumberUtils numberUtils = new NumberUtils();
+        boolean isAllPositive = false;
         for (String arg : args) {
-            if (numberUtils.createDouble(arg) < 0) {
+            if (!NumberUtils.isCreatable(arg) || NumberUtils.createDouble(arg) < 0) {
                 isAllPositive = false;
                 break;
             }
