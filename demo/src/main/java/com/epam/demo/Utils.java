@@ -7,7 +7,7 @@ public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
         boolean isAllPositive = false;
         for (String arg : args) {
-            if (!NumberUtils.isCreatable(arg) || NumberUtils.createDouble(arg) <= 0) {
+            if (!NumberUtils.isCreatable(arg) || NumberUtils.createNumber(arg).doubleValue() <= 0) {
                 isAllPositive = false;
                 break;
             }
